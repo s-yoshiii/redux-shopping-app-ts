@@ -10,7 +10,10 @@ import {
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import React from "react";
+import { useSelector } from "react-redux";
 const Navbar = () => {
+  const { amount } = useSelector((store) => store.cart);
+  console.log(amount);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
