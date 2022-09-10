@@ -14,18 +14,19 @@ const Navbar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
-        <Toolbar variant="dense">
+        <Toolbar>
           <Typography variant="h6" color="inherit" component="div">
             Shopping Cart
           </Typography>
+          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <IconButton size="large" color="inherit">
+              <Badge badgeContent={17} color="error">
+                <ShoppingCartIcon />
+              </Badge>
+            </IconButton>
+          </Box>
         </Toolbar>
-        <MenuItem>
-          <IconButton size="large" color="inherit">
-            <Badge badgeContent={17} color="error">
-              <ShoppingCartIcon />
-            </Badge>
-          </IconButton>
-        </MenuItem>
       </AppBar>
     </Box>
   );
