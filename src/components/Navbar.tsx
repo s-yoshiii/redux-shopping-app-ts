@@ -10,10 +10,9 @@ import {
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../store";
 const Navbar = () => {
-  const { amount } = useSelector((store) => store.cart);
-  console.log(amount);
+  const { amount } = useAppSelector((store) => store.cart);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -24,7 +23,7 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton size="large" color="inherit">
-              <Badge badgeContent={17} color="error">
+              <Badge badgeContent={amount} color="error">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
