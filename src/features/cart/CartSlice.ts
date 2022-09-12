@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../../store";
+import cartItems from "../../cartItems";
 interface CartItemState {
   id: number;
   title: string;
@@ -15,7 +16,7 @@ interface CartState {
 }
 
 const initialState = {
-  cartItem: [],
+  cartItem: cartItems,
   amount: 0,
   total: 0,
 };
