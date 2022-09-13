@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, Stack } from "@mui/material";
 import React from "react";
 import { useAppSelector } from "../store";
 import { CartItem } from "./CartItem";
@@ -25,11 +25,11 @@ const CartContainer = () => {
         <Typography variant="h2" gutterBottom>
           Cart
         </Typography>
-        <div>
+        <Stack spacing={4}>
           {cartItems.map((item) => {
             return <CartItem key={item.id} />;
           })}
-        </div>
+        </Stack>
       </Box>
     </Container>
   );
