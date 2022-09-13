@@ -10,14 +10,14 @@ interface CartItemState {
   amount: number;
 }
 interface CartState {
-  cartItem: CartItemState[];
+  cartItems: CartItemState[];
   amount: number;
   total: number;
 }
 
 const initialState = {
-  cartItem: cartItems,
-  amount: 0,
+  cartItems: cartItems,
+  amount: 4,
   total: 0,
 };
 const cartSlice = createSlice({
