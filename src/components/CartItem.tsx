@@ -17,7 +17,13 @@ export const CartItem = () => {
         image="https://placehold.jp/600x400.png"
         alt=""
       />
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: "calc(100% - 200px)",
+        }}
+      >
         <CardContent sx={{ p: 3 }}>
           <Typography
             component="div"

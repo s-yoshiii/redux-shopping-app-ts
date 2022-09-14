@@ -6,6 +6,7 @@ import {
   Divider,
   Button,
 } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 import React from "react";
 import { useAppSelector } from "../store";
 import { CartItem } from "./CartItem";
@@ -37,10 +38,14 @@ const CartContainer = () => {
             return <CartItem key={item.id} />;
           })}
         </Stack>
-        <Divider sx={{ mt: 7 }} variant="middle" />
-        <Box>合計:{total}円</Box>
-        <Box>
-          <Button variant="contained">全削除</Button>
+        <Divider sx={{ my: 7 }} />
+        <Box sx={{ textAlign: "right" }}>
+          <Typography variant="h3">合計:{total}円</Typography>
+        </Box>
+        <Box sx={{ textAlign: "center" }}>
+          <Button variant="outlined" size="large" startIcon={<DeleteIcon />}>
+            全削除
+          </Button>
         </Box>
       </Box>
     </Container>
