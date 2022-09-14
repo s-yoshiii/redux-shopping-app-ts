@@ -35,7 +35,7 @@ const CartContainer = () => {
         </Typography>
         <Stack spacing={4}>
           {cartItems.map((item) => {
-            return <CartItem key={item.id} />;
+            return <CartItem key={item.id} {...item} />;
           })}
         </Stack>
         <Divider sx={{ my: 7 }} />
