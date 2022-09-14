@@ -1,10 +1,17 @@
-import { Box, Container, Typography, Stack } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  Stack,
+  Divider,
+  Button,
+} from "@mui/material";
 import React from "react";
 import { useAppSelector } from "../store";
 import { CartItem } from "./CartItem";
 
 const CartContainer = () => {
-  const { amount, cartItems } = useAppSelector((store) => store.cart);
+  const { amount, cartItems, total } = useAppSelector((store) => store.cart);
   if (amount < 1) {
     return (
       <Container>
@@ -30,6 +37,11 @@ const CartContainer = () => {
             return <CartItem key={item.id} />;
           })}
         </Stack>
+        <Divider sx={{ mt: 7 }} variant="middle" />
+        <Box>合計:{total}円</Box>
+        <Box>
+          <Button variant="contained">全削除</Button>
+        </Box>
       </Box>
     </Container>
   );
