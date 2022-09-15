@@ -10,8 +10,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import React from "react";
 import { useAppSelector } from "../store";
 import { CartItem } from "./CartItem";
-
+import { clearCart } from "../features/cart/CartSlice";
+import { useDispatch } from "react-redux";
 const CartContainer = () => {
+  const dispatch = useDispatch();
   const { amount, cartItems, total } = useAppSelector((store) => store.cart);
   if (amount < 1) {
     return (
@@ -43,7 +45,12 @@ const CartContainer = () => {
           <Typography variant="h3">合計:{total}円</Typography>
         </Box>
         <Box mt={4} sx={{ textAlign: "center" }}>
-          <Button variant="outlined" size="large" startIcon={<DeleteIcon />}>
+          <Button
+            variant="outlined"
+            size="large"
+            startIcon={<DeleteIcon />}
+            onClick={() => dispatch(clearCart())}
+          >
             全削除
           </Button>
         </Box>
