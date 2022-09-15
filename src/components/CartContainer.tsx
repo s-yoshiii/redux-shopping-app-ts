@@ -42,7 +42,7 @@ const CartContainer = () => {
         <Box sx={{ textAlign: "right" }}>
           <Typography variant="h3">合計:{total}円</Typography>
         </Box>
-        <Box sx={{ textAlign: "center" }}>
+        <Box mt={4} sx={{ textAlign: "center" }}>
           <Button variant="outlined" size="large" startIcon={<DeleteIcon />}>
             全削除
           </Button>
