@@ -12,8 +12,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
 import { CartItems } from "../types/cartItem";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../features/cart/CartSlice";
 type Props = CartItems;
 export const CartItem: FC<Props> = (props) => {
+  const dispatch = useDispatch();
   const { id, img, title, price, amount } = props;
   return (
     <Card elevation={2} sx={{ display: "flex" }}>
@@ -49,7 +52,7 @@ export const CartItem: FC<Props> = (props) => {
               ￥{price.toLocaleString()}
             </Typography>
             <Stack>
-              <IconButton aria-label="remove">
+              <IconButton aria-label="add">
                 <AddCircleRoundedIcon />
               </IconButton>
               <IconButton aria-label="remove">
@@ -67,7 +70,10 @@ export const CartItem: FC<Props> = (props) => {
             pb: 1,
           }}
         >
-          <IconButton aria-label="delete">
+          <IconButton
+            aria-label="delete"
+            onClick={() => dispatch(removeItem(id))}
+          >
             <DeleteIcon />
           </IconButton>
         </Box>
