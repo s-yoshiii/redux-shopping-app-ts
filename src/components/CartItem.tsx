@@ -13,7 +13,7 @@ import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
 import { CartItems } from "../types/cartItem";
 import { useDispatch } from "react-redux";
-import { removeItem } from "../features/cart/CartSlice";
+import { removeItem, increase, decrease } from "../features/cart/CartSlice";
 type Props = CartItems;
 export const CartItem: FC<Props> = (props) => {
   const dispatch = useDispatch();
@@ -49,13 +49,28 @@ export const CartItem: FC<Props> = (props) => {
               sx={{ fontWeight: "medium", textAlign: "right" }}
               component="div"
             >
-              ￥{price.toLocaleString()}
+              {amount}
+              <br />￥{price.toLocaleString()}
             </Typography>
             <Stack>
-              <IconButton aria-label="add">
+              <IconButton
+                aria-label="add"
+                onClick={() => {
+                  dispatch(increase(id));
+                }}
+              >
                 <AddCircleRoundedIcon />
               </IconButton>
-              <IconButton aria-label="remove">
+              <IconButton
+                aria-label="remove"
+                onClick={() => {
+                  if (amount === 1) {
+                    dispatch(removeItem(id));
+                    return;
+                  }
+                  dispatch(decrease(id));
+                }}
+              >
                 <RemoveCircleRoundedIcon />
               </IconButton>
             </Stack>
