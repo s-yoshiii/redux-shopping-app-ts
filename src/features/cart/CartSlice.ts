@@ -57,9 +57,9 @@ const cartSlice = createSlice({
       state.cartItems.forEach((item) => {
         amount += item.amount;
         total += item.amount * item.price;
-        state.amount = amount;
-        state.total = total;
       });
+      state.amount = amount;
+      state.total = total;
     },
   },
 });
