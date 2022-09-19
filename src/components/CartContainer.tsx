@@ -42,7 +42,7 @@ const CartContainer = () => {
         </Stack>
         <Divider sx={{ my: 7 }} />
         <Box sx={{ textAlign: "right" }}>
-          <Typography variant="h3">合計:{total}円</Typography>
+          <Typography variant="h3">合計:{total.toLocaleString()}円</Typography>
         </Box>
         <Box mt={4} sx={{ textAlign: "center" }}>
           <Button
