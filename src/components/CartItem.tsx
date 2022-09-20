@@ -19,13 +19,18 @@ export const CartItem: FC<Props> = (props) => {
   const dispatch = useDispatch();
   const { id, img, title, price, amount } = props;
   return (
-    <Card elevation={2} sx={{ display: "flex" }}>
-      <CardMedia component="img" sx={{ width: 200 }} image={img} alt="" />
+    <Card elevation={2} sx={{ display: { md: "flex" } }}>
+      <CardMedia
+        component="img"
+        sx={{ width: { md: 400 }, height: { md: 220, xs: 280 } }}
+        image={img}
+        alt=""
+      />
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
-          width: "calc(100% - 200px)",
+          width: { md: "calc(100% - 400px)" },
         }}
       >
         <CardContent sx={{ p: 3 }}>
