@@ -10,8 +10,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import React from "react";
 import { useAppSelector } from "../store";
 import { CartItem } from "./CartItem";
-import { clearCart } from "../features/cart/CartSlice";
 import { useDispatch } from "react-redux";
+import { openModal } from "../features/modal/ModalSlice";
 const CartContainer = () => {
   const dispatch = useDispatch();
   const { amount, cartItems, total } = useAppSelector((store) => store.cart);
@@ -49,7 +49,7 @@ const CartContainer = () => {
             variant="outlined"
             size="large"
             startIcon={<DeleteIcon />}
-            onClick={() => dispatch(clearCart())}
+            onClick={() => dispatch(openModal())}
           >
             全削除
           </Button>
