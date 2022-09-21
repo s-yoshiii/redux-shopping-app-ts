@@ -7,6 +7,7 @@ import {
   IconButton,
   CardMedia,
   Stack,
+  Rating,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
@@ -41,7 +42,12 @@ export const CartItem: FC<Props> = (props) => {
           >
             {title}
           </Typography>
-
+          <Rating
+            name="half-rating"
+            defaultValue={2.5}
+            precision={0.5}
+            readOnly
+          />
           <Stack
             direction="row"
             justifyContent="flex-end"
