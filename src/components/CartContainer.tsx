@@ -7,7 +7,6 @@ import {
   Button,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import React from "react";
 import { useAppSelector } from "../store";
 import { CartItem } from "./CartItem";
 import { useDispatch } from "react-redux";
@@ -23,7 +22,7 @@ const CartContainer = () => {
             Cart
           </Typography>
           <Typography variant="h6" gutterBottom>
-            何も入っていません。
+            Nothing in cart.
           </Typography>
         </Box>
       </Container>
@@ -42,7 +41,7 @@ const CartContainer = () => {
         </Stack>
         <Divider sx={{ my: 7 }} />
         <Box sx={{ textAlign: "right" }}>
-          <Typography variant="h3">合計:{total.toLocaleString()}円</Typography>
+          <Typography variant="h3">Total:￥{total.toLocaleString()}</Typography>
         </Box>
         <Box mt={4} sx={{ textAlign: "center" }}>
           <Button
@@ -51,7 +50,7 @@ const CartContainer = () => {
             startIcon={<DeleteIcon />}
             onClick={() => dispatch(openModal())}
           >
-            全削除
+            All Delete
           </Button>
         </Box>
       </Box>

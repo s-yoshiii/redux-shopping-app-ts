@@ -7,6 +7,7 @@ const cartItems: CartItems[] = [
     price: 120000,
     img: "https://source.unsplash.com/aX1TTOuq83M",
     amount: 1,
+    rate: 5,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const cartItems: CartItems[] = [
     price: 50000,
     img: "https://source.unsplash.com/3neSwyntbQ8",
     amount: 1,
+    rate: 4,
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ const cartItems: CartItems[] = [
     price: 100000,
     img: "https://source.unsplash.com/NvqYkDPE0Rw",
     amount: 1,
+    rate: 3,
   },
   {
     id: 4,
